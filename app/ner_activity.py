@@ -7,7 +7,7 @@
 from .fastai_seq_utilities import *
 import torch
 # import app.utilities_tgdd as utilities
-import .utilities_tgdd as utilities
+# import .utilities_tgdd as utilities
 from fastai.text import *
 import torch
 import pickle
@@ -19,7 +19,7 @@ import collections
 from functools import partial
 # from app.util import PreprocessClass
 from .util import PreprocessClass
-import .rest_api_pb2
+import rest_api_pb2
 
 import torch._utils
 try:
