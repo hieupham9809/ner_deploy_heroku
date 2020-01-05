@@ -2,7 +2,7 @@ import torch
 from torch.utils.data.sampler import SequentialSampler, RandomSampler, BatchSampler
 
 # from app.core import *
-from core import *
+from .core import *
 import collections,sys,traceback,threading
 
 string_classes = (str, bytes)
