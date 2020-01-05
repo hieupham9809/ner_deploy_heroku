@@ -20,9 +20,11 @@ from functools import partial
 # from app.util import PreprocessClass
 from .util import PreprocessClass
 from .rest_api_pb2 import PredictResult
-import sys
-sys.path.insert(0, './models')
+import os.path
 import torch._utils
+
+current_path = os.path.abspath(os.path.dirname(__file__))
+
 try:
     torch._utils._rebuild_tensor_v2
 except AttributeError:
@@ -422,7 +424,7 @@ def softmax(x):
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum()
 
-vocab = torch.load("new_vocab.h5")
+vocab = torch.load(os.path.join(current_path,'models/new_vocab.h5'))
 itos_wiki=vocab.itos
 stoi_wiki=vocab.stoi
 print(len(vocab.itos))
@@ -437,7 +439,7 @@ def sentence_to_index_vector(input_sentence):
   # print(list_token)
   return vocab.numericalize(list_token)
 
-lm_wgts = torch.load('model_cpu_add_corpus_vocab_enc.pth', map_location='cpu')
+lm_wgts = torch.load(os.path.join(current_path,'models/model_cpu_add_corpus_vocab_enc.pth'), map_location='cpu')
 # model = torch.load('/content/drive/Thesis/datav2/intentdb/models/wiki_ulmfit/model_cpu_add_corpus_vocab_enc.pth',map_location='cpu')
 
 enc_weight = lm_wgts['encoder.weight']
@@ -630,7 +632,7 @@ class NERTAG(metaclass=Singleton):
 
     def __init__(self):
         self.model = AWD_CRF(27498, tag_to_ix, EMBEDDING_DIM, HIDDEN_DIM)
-        self.model.load_state_dict(torch.load('ner_137_GPU_400e.pth'))
+        self.model.load_state_dict(torch.load(os.path.join(current_path,'models/ner_137_GPU_400e.pth'))
 
     def predict(self, mentions):
         self.model.eval()
