@@ -35,7 +35,7 @@ except AttributeError:
         return tensor
     torch._utils._rebuild_tensor_v2 = _rebuild_tensor_v2
 
-print(torch.__version__)
+# print(torch.__version__)
 
 class Singleton(type):
     _instances = {}
@@ -262,7 +262,7 @@ class Prep:
     def get_all(df, n_lbls):
         tok, labels = [], []
         for i, r in enumerate(df):
-            print(i)
+            # print(i)
             tok_, labels_ = Prep.get_texts(r, n_lbls)
             tok += tok_;
             labels += labels_
@@ -427,8 +427,8 @@ def softmax(x):
 vocab = torch.load(os.path.join(current_path,'models/new_vocab.h5'))
 itos_wiki=vocab.itos
 stoi_wiki=vocab.stoi
-print(len(vocab.itos))
-list(stoi_wiki.items())[0:10]
+# print(len(vocab.itos))
+# list(stoi_wiki.items())[0:10]
 
 def sentence_to_index_vector(input_sentence):
   # input_sentence = re.sub('[\,\_=\+\-\#\@\$\%\$\\.\?\:\(\)\~\!\@\;\'\|\<\>\]\[\"\–“”…*]',' ',input_sentence)
@@ -462,7 +462,7 @@ def forward_07_ml(sentence_index_vector):
   return result
 
 
-forward_07_ml(sentence_to_index_vector("đi mùa hè xanh vui không"))
+# forward_07_ml(sentence_to_index_vector("đi mùa hè xanh vui không"))
 
 
 class AWD_CRF(nn.Module):
