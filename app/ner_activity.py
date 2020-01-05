@@ -4,7 +4,7 @@
 #from fastai.lm_rnn import *
 #from sebastian.eval import eval_ner
 # from app.fastai_seq_utilities import *
-from fastai_seq_utilities import *
+from .fastai_seq_utilities import *
 import torch
 # import app.utilities_tgdd as utilities
 import utilities_tgdd as utilities
