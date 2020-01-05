@@ -18,7 +18,7 @@ import pickle
 import collections
 from functools import partial
 # from app.util import PreprocessClass
-from util import PreprocessClass
+from .util import PreprocessClass
 import rest_api_pb2
 
 import torch._utils

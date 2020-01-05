@@ -4,10 +4,10 @@ from distutils.version import LooseVersion
 # from .imports import *
 # from .torch_imports import *
 # from app.rnn_reg import LockedDropout,WeightDrop,EmbeddingDropout
-from rnn_reg import LockedDropout,WeightDrop,EmbeddingDropout
+from .rnn_reg import LockedDropout,WeightDrop,EmbeddingDropout
 
 # from model import Stepper
-from core import set_grad_enabled
+from .core import set_grad_enabled
 # from app.core import set_grad_enabled
 
 from torch.autograd import Variable
