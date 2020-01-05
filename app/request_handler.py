@@ -2,7 +2,7 @@
 from proto import rest_api_pb2
 from google.protobuf import json_format
 from flask import Flask, jsonify, make_response, request as flask_request
-from ner_activity import NERTAG
+from .ner_activity import NERTAG
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
