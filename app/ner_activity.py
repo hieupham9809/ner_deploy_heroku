@@ -632,7 +632,7 @@ class NERTAG(metaclass=Singleton):
 
     def __init__(self):
         self.model = AWD_CRF(27498, tag_to_ix, EMBEDDING_DIM, HIDDEN_DIM)
-        self.model.load_state_dict(torch.load(os.path.join(current_path,'models/ner_137_GPU_400e.pth'))
+        self.model.load_state_dict(torch.load(os.path.join(current_path,'models/ner_137_GPU_400e.pth')))
 
     def predict(self, mentions):
         self.model.eval()
