@@ -1,10 +1,10 @@
 import torch.utils.data as data
 import numpy as np
 # from app.dataloader import DataLoader
-from dataloader import DataLoader
+from .dataloader import DataLoader
 
 # from app.lm_rnn import RNN_Encoder, SequentialRNN, LinearDecoder
-from lm_rnn import RNN_Encoder, SequentialRNN, LinearDecoder
+from .lm_rnn import RNN_Encoder, SequentialRNN, LinearDecoder
 
 class TextSeqDataset(data.Dataset):
     def __init__(self, x, y, backwards=False, sos=None, eos=None):
