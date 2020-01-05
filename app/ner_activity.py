@@ -19,7 +19,7 @@ import collections
 from functools import partial
 # from app.util import PreprocessClass
 from .util import PreprocessClass
-import rest_api_pb2
+from .rest_api_pb2 import PredictResult
 
 import torch._utils
 try:
@@ -648,7 +648,7 @@ class NERTAG(metaclass=Singleton):
         # result_predicted = list(map(lambda x: self._predict_single(x), input_text))
 
         for index, result_value in enumerate(result_predicted): 
-            result = rest_api_pb2.PredictResult()
+            result = PredictResult()
             result.id = mentions[index].id
             result.tags.extend(result_value)
             results.append(result)
