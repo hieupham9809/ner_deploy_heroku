@@ -649,7 +649,7 @@ class NERTAG(metaclass=Singleton):
                 precheck_sent = prepare_sequence(x.split(" "), word_to_ix)
                 result_predicted.append([ ix_to_tag[x] for x in self.model(precheck_sent)[1]])
         # result_predicted = list(map(lambda x: self._predict_single(x), input_text))
-
+        print(result_predicted)
         for index, result_value in enumerate(result_predicted): 
             result = rest_api_pb2.PredictResult()
             result.id = mentions[index].id
