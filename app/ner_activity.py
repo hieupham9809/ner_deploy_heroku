@@ -19,7 +19,7 @@ import collections
 from functools import partial
 # from app.util import PreprocessClass
 from .util import PreprocessClass
-from .rest_api_pb2 import PredictResult
+from .proto.rest_api_pb2 import PredictResult
 import os.path
 import torch._utils
 
