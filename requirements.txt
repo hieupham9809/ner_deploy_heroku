@@ -9,4 +9,4 @@ flask-cors
 mock
 coverage
 fastai
-numpy==1.15.2
+numpy==1.22.0
